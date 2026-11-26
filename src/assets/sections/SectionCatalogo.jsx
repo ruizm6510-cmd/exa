@@ -1,6 +1,9 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useMatch } from 'react-router-dom';
+import ProductosFetch from '../pages/ProductosFetch.jsx';
 
 function SectionCatalogo() {
+  const esRutaInicial = useMatch({ path: '/catalogo', end: true });
+
   return (
     <section className="seccion seccion--catalogo">
       <header className="seccion__encabezado">
@@ -17,7 +20,7 @@ function SectionCatalogo() {
         </NavLink>
       </div>
       <div className="seccion__contenido">
-        <Outlet />
+        {esRutaInicial ? <ProductosFetch /> : <Outlet />}
       </div>
     </section>
   );

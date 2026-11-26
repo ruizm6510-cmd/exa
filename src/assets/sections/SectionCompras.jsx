@@ -1,8 +1,10 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useMatch } from 'react-router-dom';
 
 import { useCarritoStore } from '../components/store/useCarritoStore.js';
+import Carrito from '../pages/carrito.jsx';
 
 function SectionCompras() {
+  const esRutaInicial = useMatch({ path: '/compras', end: true });
   const unidades = useCarritoStore((state) =>
     state.productos.reduce((total, producto) => total + producto.cantidad, 0)
   );
@@ -24,7 +26,7 @@ function SectionCompras() {
       </div>
 
       <div className="seccion__contenido">
-        <Outlet />
+        {esRutaInicial ? <Carrito /> : <Outlet />}
       </div>
     </section>
   );

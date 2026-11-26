@@ -19,6 +19,7 @@
   font-optical-sizing: auto;
 }
 
+
 *,
 *::before,
 *::after {
@@ -97,7 +98,6 @@ select:focus-visible {
 
 .header__titulo {
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.05em;
@@ -296,7 +296,6 @@ select:focus-visible {
   max-width: 510px;
   margin: 12px 0 14px;
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: clamp(2.1rem, 4vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.06em;
@@ -344,7 +343,6 @@ select:focus-visible {
   border-radius: 50%;
   background: var(--terracota);
   color: var(--blanco);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: 800;
   line-height: 1.15;
@@ -376,7 +374,6 @@ select:focus-visible {
 .paso h3 {
   margin: 6px 0 4px;
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1rem;
 }
 
@@ -398,7 +395,6 @@ select:focus-visible {
 }
 
 .inicio__cta h3 {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.15rem;
 }
 
@@ -422,7 +418,6 @@ select:focus-visible {
 .seccion__encabezado h1 {
   margin-top: 5px;
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.8rem;
   letter-spacing: -0.04em;
 }
@@ -482,7 +477,6 @@ select:focus-visible {
 
 .catalogo__titulo {
   color: var(--tinta);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.12rem;
 }
 
@@ -501,11 +495,6 @@ select:focus-visible {
   color: var(--verde);
   font-size: 0.67rem;
   font-weight: 700;
-}
-
-.etiqueta--axios {
-  background: #FCEEE7;
-  color: var(--terracota);
 }
 
 .buscador {
@@ -591,7 +580,6 @@ select:focus-visible {
   min-height: 42px;
   overflow: hidden;
   color: var(--tinta);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.83rem;
   font-weight: 700;
   line-height: 1.45;
@@ -632,7 +620,6 @@ select:focus-visible {
 .canasta__barra h2,
 .resumen__encabezado h2 {
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.25rem;
 }
 
@@ -670,7 +657,6 @@ select:focus-visible {
 .carrito__info h3 {
   display: -webkit-box;
   overflow: hidden;
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.8rem;
   line-height: 1.4;
   -webkit-box-orient: vertical;
@@ -737,7 +723,6 @@ select:focus-visible {
 .pedido h2 {
   margin: 4px 0 20px;
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.18rem;
 }
 
@@ -782,7 +767,6 @@ select:focus-visible {
 
 .canasta-vacia h2 {
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .canasta-vacia p {
@@ -833,7 +817,6 @@ select:focus-visible {
 }
 
 .resumen__producto h3 {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.8rem;
 }
 
@@ -879,7 +862,6 @@ select:focus-visible {
 
 .confirmacion h2 {
   color: var(--verde-oscuro);
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 1.65rem;
 }
 
