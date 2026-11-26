@@ -7,6 +7,8 @@ import { formatearPrecio } from '../components/utils/formato.js';
 function Resumen() {
   const navigate = useNavigate();
   const productos = useCarritoStore((state) => state.productos);
+  const historial = useCarritoStore((state) => state.historial);
+  const registrarCompra = useCarritoStore((state) => state.registrarCompra);
   const vaciarCarrito = useCarritoStore((state) => state.vaciarCarrito);
   const [confirmado, setConfirmado] = useState(false);
 
@@ -17,44 +19,58 @@ function Resumen() {
   );
 
   const confirmarPedido = () => {
+    registrarCompra(productos);
     setConfirmado(true);
     vaciarCarrito();
   };
 
   if (confirmado) {
     return (
-      <div className="confirmacion" role="status">
-        <span className="confirmacion__icono" aria-hidden="true">✓</span>
-        <span className="seccion__sobrelinea">PEDIDO LISTO</span>
-        <h2>¡Gracias por elegir MercaCauca!</h2>
-        <p>
-          Tu pedido quedó confirmado en esta demostración. No se envió a un comercio porque
-          todavía no hay un backend conectado.
-        </p>
-        <button
-          type="button"
-          className="btn btn--primario"
-          onClick={() => navigate('/catalogo')}
-        >
-          Volver a la vitrina
-        </button>
-      </div>
+      <>
+        <div className="confirmacion" role="status">
+          <span className="confirmacion__icono" aria-hidden="true">✓</span>
+          <span className="seccion__sobrelinea">PEDIDO LISTO</span>
+          <h2>¡Gracias por elegir MercaCauca!</h2>
+          <p>
+            compra realizada
+          </p>
+          <button
+            type="button"
+            className="btn btn--primario"
+            onClick={() => navigate('/catalogo')}
+          >
+            Volver a la vitrina
+          </button>
+        </div>
+        <HistorialCompras compras={historial} />
+      </>
     );
   }
 
   if (productos.length === 0) {
     return (
-      <div className="estado estado--vacio canasta-vacia">
-        <h2>Aún no hay un pedido para revisar</h2>
-        <p>Agrega productos a tu canasta y aquí podrás revisar el total.</p>
-        <button
-          type="button"
-          className="btn btn--primario"
-          onClick={() => navigate('/catalogo')}
-        >
-          Explorar productos
-        </button>
-      </div>
+      <>
+        <div className="estado estado--vacio canasta-vacia">
+          <h2>
+            {historial.length
+              ? 'No tienes un pedido pendiente'
+              : 'Aún no hay un pedido para revisar'}
+          </h2>
+          <p>
+            {historial.length
+              ? 'Aquí puedes consultar tus compras anteriores o empezar una nueva.'
+              : 'Agrega productos a tu canasta y aquí podrás revisar el total.'}
+          </p>
+          <button
+            type="button"
+            className="btn btn--primario"
+            onClick={() => navigate('/catalogo')}
+          >
+            Explorar productos
+          </button>
+        </div>
+        <HistorialCompras compras={historial} />
+      </>
     );
   }
 
@@ -115,7 +131,53 @@ function Resumen() {
           </button>
         </aside>
       </div>
+      <HistorialCompras compras={historial} />
     </div>
+  );
+}
+
+function HistorialCompras({ compras }) {
+  if (compras.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="historial" aria-labelledby="historial-titulo">
+      <div className="historial__encabezado">
+        <span className="seccion__sobrelinea">TUS COMPRAS</span>
+        <h2 id="historial-titulo">Historial de compras</h2>
+      </div>
+      <ol className="historial__lista">
+        {compras.map((compra) => (
+          <li className="historial__compra" key={compra.id}>
+            <div className="historial__compra-encabezado">
+              <div>
+                <h3>
+                  Compra del{' '}
+                  {new Date(compra.fecha).toLocaleString('es-CO', {
+                    dateStyle: 'medium',
+                    timeStyle: 'short',
+                  })}
+                </h3>
+                <p>
+                  {compra.productos.length}{' '}
+                  {compra.productos.length === 1 ? 'producto' : 'productos'}
+                </p>
+              </div>
+              <strong>{formatearPrecio(compra.total)}</strong>
+            </div>
+            <ul className="historial__productos">
+              {compra.productos.map((producto) => (
+                <li key={producto.id}>
+                  <span>{producto.titulo} × {producto.cantidad}</span>
+                  <span>{formatearPrecio(producto.precio * producto.cantidad)}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 

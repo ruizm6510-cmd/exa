@@ -875,6 +875,70 @@ select:focus-visible {
   font-size: 0.9rem;
 }
 
+.historial {
+  margin-top: 28px;
+}
+
+.historial__encabezado {
+  margin-bottom: 12px;
+}
+
+.historial__encabezado h2 {
+  margin-top: 4px;
+  color: var(--verde-oscuro);
+  font-size: 1.25rem;
+}
+
+.historial__lista {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.historial__compra {
+  padding: 16px;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: var(--blanco);
+}
+
+.historial__compra-encabezado,
+.historial__productos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.historial__compra-encabezado {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.historial__compra-encabezado h3 {
+  color: var(--verde-oscuro);
+  font-size: 0.9rem;
+}
+
+.historial__compra-encabezado p,
+.historial__productos {
+  color: var(--suave);
+  font-size: 0.78rem;
+}
+
+.historial__compra-encabezado strong {
+  color: var(--verde);
+  white-space: nowrap;
+}
+
+.historial__productos {
+  display: grid;
+  gap: 8px;
+  padding: 12px 0 0;
+  list-style: none;
+}
+
 /* Estados de carga, error y vacío */
 .estado {
   padding: 24px;

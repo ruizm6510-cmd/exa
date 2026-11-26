@@ -12,7 +12,7 @@ function SectionCompras() {
       <header className="seccion__encabezado">
         <span className="seccion__sobrelinea">TU PEDIDO</span>
         <h1>Mi canasta</h1>
-        <p>Revisa tus productos y confirma cuando todo esté listo.</p>
+        <p>Revisa tu canasta y consulta el historial de tus compras.</p>
       </header>
       <div className="pestanas">
         <NavLink to="/compras" end className="pestanas__item">
