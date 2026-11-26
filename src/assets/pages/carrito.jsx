@@ -19,7 +19,7 @@ function Carrito() {
     return (
       <div className="estado estado--vacio canasta-vacia">
         <span className="canasta-vacia__icono" aria-hidden="true">♧</span>
-        <h2>Tu canasta está esperando</h2>
+        <h2>Tu canasta te está esperando</h2>
         <p>Cuando encuentres algo que te guste, agrégalo aquí.</p>
         <button
           type="button"
