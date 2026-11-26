@@ -1,122 +1,45 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+mport { Routes, Route } from 'react-router-dom';
+
+// Layout general (estructura estática de la página)
+import Layout from './layouts/Layout.jsx';
+
+// Las dos Sections (cada una con su propio <Outlet/>)
+import SectionCatalogo from './sections/SectionCatalogo.jsx';
+import SectionCompras from './sections/SectionCompras.jsx';
+
+// Páginas (vistas que se cargan dentro de los Outlet)
+import Inicio from './pages/Inicio.jsx';
+import ProductosFetch from './pages/ProductosFetch.jsx';
+import ProductosAxios from './pages/ProductosAxios.jsx';
+import Carrito from './pages/Carrito.jsx';
+import Resumen from './pages/Resumen.jsx';
+import NoEncontrado from './pages/NoEncontrado.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Routes>
+      {/* Ruta padre: el Layout siempre se ve; su Outlet cambia */}
+      <Route path="/" element={<Layout />}>
+        {/* index = lo que se muestra en "/" exactamente */}
+        <Route index element={<Inicio />} />
 
-      <div className="ticks"></div>
+        {/* ---------- SECTION 1: CATÁLOGO ---------- */}
+        <Route path="catalogo" element={<SectionCatalogo />}>
+          <Route index element={<ProductosFetch />} />
+          <Route path="axios" element={<ProductosAxios />} />
+        </Route>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        {/* ---------- SECTION 2: COMPRAS ---------- */}
+        <Route path="compras" element={<SectionCompras />}>
+          <Route index element={<Carrito />} />
+          <Route path="resumen" element={<Resumen />} />
+        </Route>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* Cualquier otra URL que no exista */}
+        <Route path="*" element={<NoEncontrado />} />
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
