@@ -153,11 +153,7 @@ function HistorialCompras({ compras }) {
             <div className="historial__compra-encabezado">
               <div>
                 <h3>
-                  Compra del{' '}
-                  {new Date(compra.fecha).toLocaleString('es-CO', {
-                    dateStyle: 'medium',
-                    timeStyle: 'short',
-                  })}
+                  Compra
                 </h3>
                 <p>
                   {compra.productos.length}{' '}

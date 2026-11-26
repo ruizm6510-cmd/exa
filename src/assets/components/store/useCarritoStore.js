@@ -78,7 +78,6 @@ export const useCarritoStore = create(
           historial: [
             {
               id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
-              fecha: new Date().toISOString(),
               productos: productos.map((producto) => ({ ...producto })),
               total: productos.reduce(
                 (total, producto) => total + producto.precio * producto.cantidad,
