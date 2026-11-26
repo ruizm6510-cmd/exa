@@ -12,11 +12,11 @@ function SectionCatalogo() {
         <p>Descubre productos y agrega tus favoritos a la canasta.</p>
       </header>
       <div className="pestanas">
-        <NavLink to="/catalogo" end className="pestanas__item">
-          Productos destacados
+        <NavLink to="/catalogo" className="pestanas__item">
+          Productos con Fetch
         </NavLink>
-        <NavLink to="/catalogo/axios" className="pestanas__item">
-          Explorar por categoría
+        <NavLink to="/catalogo/axios" end className="pestanas__item">
+          Productos con Axios
         </NavLink>
       </div>
       <div className="seccion__contenido">

@@ -106,7 +106,7 @@ function Carrito() {
           <span>Total estimado</span>
           <strong>{formatearPrecio(total)}</strong>
         </div>
-        <p className="pedido__nota">El total corresponde a los precios de referencia de las APIs públicas.</p>
+        <p className="pedido__nota">api</p>
         <button
           type="button"
           className="btn btn--primario pedido__confirmar"

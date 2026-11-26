@@ -18,9 +18,9 @@ function SectionCompras() {
       </header>
       <div className="pestanas">
         <NavLink to="/compras" end className="pestanas__item">
-          Canasta <span className="pestanas__contador">{unidades}</span>
+          Mi canasta <span className="pestanas__contador">{unidades}</span>
         </NavLink>
-        <NavLink to="/compras/resumen" className="pestanas__item">
+        <NavLink to="/compras/resumen" end className="pestanas__item">
           Mi pedido
         </NavLink>
       </div>

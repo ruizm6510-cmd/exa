@@ -21,7 +21,7 @@ function Inicio() {
           >
             Explorar la vitrina <span aria-hidden="true">→</span>
           </button>
-          <p className="inicio__nota">Precios de referencia en USD · Catálogo cargado desde APIs públicas</p>
+          <p className="inicio__nota">precios locales</p>
         </div>
         <div className="inicio__hero-imagen">
           <img src={hero} alt="Ilustración de productos para el mercado" />
@@ -43,7 +43,7 @@ function Inicio() {
         <article className="paso">
           <span className="paso__numero">03</span>
           <h3>Confirma</h3>
-          <p>Revisa el total de tu pedido antes de confirmarlo.</p>
+          <p>Revisa el total de tu pedido</p>
         </article>
       </section>
 

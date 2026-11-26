@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const ENLACES = [
   { texto: 'Inicio', ruta: '/', exacta: true },
   { texto: 'Vitrina', ruta: '/catalogo', exacta: false },
-  { texto: 'Mi canasta', ruta: '/compras', exacta: false },
+  { texto: 'Mi canasta', ruta: '/compras', exacta: true },
   { texto: 'Mi pedido', ruta: '/compras/resumen', exacta: true },
 ];
 
