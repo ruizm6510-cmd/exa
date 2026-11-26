@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import bannerCatalogo from '../assets/banner-catalogo.svg';
+import hero from '../../assets/hero.png';
 
 function Inicio() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function Inicio() {
           <p className="inicio__nota">Precios de referencia en USD · Catálogo cargado desde APIs públicas</p>
         </div>
         <div className="inicio__hero-imagen">
-          <img src={bannerCatalogo} alt="Ilustración de productos para el mercado" />
+          <img src={hero} alt="Ilustración de productos para el mercado" />
           <span className="inicio__sello">Fresco<br />y local</span>
         </div>
       </section>

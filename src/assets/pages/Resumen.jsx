@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useCarritoStore } from '../store/useCarritoStore.js';
-import { formatearPrecio } from '../utils/formato.js';
+import { useCarritoStore } from '../components/store/useCarritoStore.js';
+import { formatearPrecio } from '../components/utils/formato.js';
 
 function Resumen() {
   const navigate = useNavigate();

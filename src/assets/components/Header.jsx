@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import logo from '../assets/logo.svg';
-import { useCarritoStore } from '../store/useCarritoStore.js';
+import { useCarritoStore } from './store/useCarritoStore.js';
 
 function Header() {
   const navigate = useNavigate();
@@ -19,7 +18,16 @@ function Header() {
   return (
     <header className="header">
       <div className="header__marca">
-        <img src={logo} alt="" className="header__logo" />
+        <svg
+          className="header__logo"
+          viewBox="0 0 48 48"
+          role="img"
+          aria-label="MercaCauca"
+        >
+          <circle cx="24" cy="24" r="21" fill="#245B43" />
+          <path d="M13 30c5-12 17-12 22 0" fill="#E4B95C" />
+          <circle cx="24" cy="20" r="5" fill="#F7F6F0" />
+        </svg>
         <div>
           <h1 className="header__titulo">MercaCauca</h1>
           <p className="header__lema">Lo bueno del Cauca, cerca de ti</p>

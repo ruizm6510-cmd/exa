@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-import { useCarritoStore } from '../store/useCarritoStore.js';
+import { useCarritoStore } from '../components/store/useCarritoStore.js';
 
 function SectionCompras() {
   const unidades = useCarritoStore((state) =>
@@ -19,7 +19,7 @@ function SectionCompras() {
           Canasta <span className="pestanas__contador">{unidades}</span>
         </NavLink>
         <NavLink to="/compras/resumen" className="pestanas__item">
-          Revisar y confirmar
+          Mi pedido
         </NavLink>
       </div>
 

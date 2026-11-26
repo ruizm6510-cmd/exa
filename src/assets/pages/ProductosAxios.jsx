@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { apiDummy } from '../services/apiDummy.js';
-import { useCarritoStore } from '../store/useCarritoStore.js';
-import { formatearPrecio } from '../utils/formato.js';
+import { apiDummy } from '../components/services/apiDummy.js';
+import { useCarritoStore } from '../components/store/useCarritoStore.js';
+import { formatearPrecio } from '../components/utils/formato.js';
 
 // Algunas categorías que existen en DummyJSON
 const CATEGORIAS = [

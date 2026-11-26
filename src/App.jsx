@@ -1,19 +1,19 @@
-mport { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // Layout general (estructura estática de la página)
-import Layout from './layouts/Layout.jsx';
+import Layout from './assets/layouts/Layout.jsx';
 
 // Las dos Sections (cada una con su propio <Outlet/>)
-import SectionCatalogo from './sections/SectionCatalogo.jsx';
-import SectionCompras from './sections/SectionCompras.jsx';
+import SectionCatalogo from './assets/sections/SectionCatalogo.jsx';
+import SectionCompras from './assets/sections/SectionCompras.jsx';
 
 // Páginas (vistas que se cargan dentro de los Outlet)
-import Inicio from './pages/Inicio.jsx';
-import ProductosFetch from './pages/ProductosFetch.jsx';
-import ProductosAxios from './pages/ProductosAxios.jsx';
-import Carrito from './pages/Carrito.jsx';
-import Resumen from './pages/Resumen.jsx';
-import NoEncontrado from './pages/NoEncontrado.jsx';
+import Inicio from './assets/pages/inicio.jsx';
+import ProductosFetch from './assets/pages/ProductosFetch.jsx';
+import ProductosAxios from './assets/pages/ProductosAxios.jsx';
+import Carrito from './assets/pages/carrito.jsx';
+import Resumen from './assets/pages/Resumen.jsx';
+import NoEncontrado from './assets/pages/NoEncontrado.jsx';
 
 function App() {
   return (

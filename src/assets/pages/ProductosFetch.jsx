@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import { useCarritoStore } from '../store/useCarritoStore.js';
-import { formatearPrecio } from '../utils/formato.js';
+import { useCarritoStore } from '../components/store/useCarritoStore.js';
+import { formatearPrecio } from '../components/utils/formato.js';
 
 const URL_FAKESTORE = 'https://fakestoreapi.com/products';
 
