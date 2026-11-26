@@ -9,7 +9,9 @@ import SectionCompras from './assets/sections/SectionCompras.jsx';
 
 // Páginas (vistas que se cargan dentro de los Outlet)
 import Inicio from './assets/pages/inicio.jsx';
+import ProductosFetch from './assets/pages/ProductosFetch.jsx';
 import ProductosAxios from './assets/pages/ProductosAxios.jsx';
+import Carrito from './assets/pages/carrito.jsx';
 import Resumen from './assets/pages/Resumen.jsx';
 import NoEncontrado from './assets/pages/NoEncontrado.jsx';
 
@@ -23,11 +25,13 @@ function App() {
 
         {/* ---------- SECTION 1: CATÁLOGO ---------- */}
         <Route path="catalogo" element={<SectionCatalogo />}>
+          <Route index element={<ProductosFetch />} />
           <Route path="axios" element={<ProductosAxios />} />
         </Route>
 
         {/* ---------- SECTION 2: COMPRAS ---------- */}
         <Route path="compras" element={<SectionCompras />}>
+          <Route index element={<Carrito />} />
           <Route path="resumen" element={<Resumen />} />
         </Route>
 
